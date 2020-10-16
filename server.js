@@ -22,7 +22,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ limit: '10mb' , extended: false}))
 app.use(methodOverride('_method'))
 
-mongoose.connect(process.env.DB_CONNECT , { useNewUrlParser: true } )
+mongoose.connect(process.env.DBURL , { useNewUrlParser: true } )
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
